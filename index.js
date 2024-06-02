@@ -6,7 +6,8 @@ import init, {
     convert_ip_binary_to_hexadecimals,
     convert_ip_binary_to_decimals,
     convert_ip_binary_to_octals,
-    convert_ip_binary_to_dotted_decimals
+    convert_ip_binary_to_dotted_decimals,
+    convert_ip_binary_to_ipv6
 } from "./pkg/wasm_ip_tools.js";
 
 const results = {
@@ -35,6 +36,10 @@ init().then(() => {
         const ipOctals = convert_ip_binary_to_octals(ipBinary);
         console.log(ipOctals);
         document.getElementById('octals').value = ipOctals;
+
+        const ipv6 = convert_ip_binary_to_ipv6(ipBinary);
+        console.log(ipv6);
+        document.getElementById('ipv6').value = ipv6;
     });
 
     document.getElementById('convertFromBinary').addEventListener('click', function () {
@@ -55,6 +60,10 @@ init().then(() => {
         const ipOctals = convert_ip_binary_to_octals(ipBinary);
         console.log(ipOctals);
         document.getElementById('octals').value = ipOctals;
+
+        const ipv6 = convert_ip_binary_to_ipv6(ipBinary);
+        console.log(ipv6);
+        document.getElementById('ipv6').value = ipv6;
     });
 
     document.getElementById('convertFromDottedHexadecimals').addEventListener('click', function () {
@@ -75,6 +84,10 @@ init().then(() => {
         const ipOctals = convert_ip_binary_to_octals(ipBinary);
         console.log(ipOctals);
         document.getElementById('octals').value = ipOctals;
+
+        const ipv6 = convert_ip_binary_to_ipv6(ipBinary);
+        console.log(ipv6);
+        document.getElementById('ipv6').value = ipv6;
     });
 
     document.getElementById('convertFromDecimals').addEventListener('click', function () {
@@ -95,6 +108,10 @@ init().then(() => {
         const ipOctals = convert_ip_binary_to_octals(ipBinary);
         console.log(ipOctals);
         document.getElementById('octals').value = ipOctals;
+
+        const ipv6 = convert_ip_binary_to_ipv6(ipBinary);
+        console.log(ipv6);
+        document.getElementById('ipv6').value = ipv6;
     });
 
     document.getElementById('convertFromoctals').addEventListener('click', function () {
@@ -116,6 +133,9 @@ init().then(() => {
         console.log(ipDecimals);
         document.getElementById('decimals').value = ipDecimals;
 
+        const ipv6 = convert_ip_binary_to_ipv6(ipBinary);
+        console.log(ipv6);
+        document.getElementById('ipv6').value = ipv6;
     });
 
 });

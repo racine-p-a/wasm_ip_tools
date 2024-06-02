@@ -387,6 +387,26 @@ pub fn convert_ip_binary_to_dotted_decimals(binary_ip: String) -> String {
     result
 }
 
+#[wasm_bindgen]
+pub fn convert_ip_binary_to_ipv6(binary_ip: String) -> String {
+    let mut result = String::from("::ffff:");
+    // First, let's split the binary string in its 4 sub-parts.
+    let segments: Vec<&str> = binary_ip.as_bytes().chunks(8)
+        .map(|chunk| std::str::from_utf8(chunk).unwrap())
+        .collect();
+
+    let mut count:u8 = 0;
+    for (i, segment) in segments.iter().enumerate() {
+        let decimal_value = u8::from_str_radix(segment, 2).unwrap();
+        let hex_val = format!("{:02X}", decimal_value);
+        result.push_str(&*hex_val);
+        if count==1 {
+            result.push_str(":");
+        }
+        count+=1;
+    }
+    result.to_lowercase()
+}
 
 
 fn hex_char_to_binary(hex_char: char) -> &'static str {
