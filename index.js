@@ -7,7 +7,8 @@ import init, {
     convert_ip_binary_to_decimals,
     convert_ip_binary_to_octals,
     convert_ip_binary_to_dotted_decimals,
-    convert_ip_binary_to_ipv6
+    convert_ip_binary_to_ipv6,
+    convert_ip_to_hostname
 } from "./pkg/wasm_ip_tools.js";
 
 const results = {
@@ -137,6 +138,5 @@ init().then(() => {
         console.log(ipv6);
         document.getElementById('ipv6').value = ipv6;
     });
-
 });
 

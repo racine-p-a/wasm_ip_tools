@@ -396,7 +396,7 @@ pub fn convert_ip_binary_to_ipv6(binary_ip: String) -> String {
         .collect();
 
     let mut count:u8 = 0;
-    for (i, segment) in segments.iter().enumerate() {
+    for (_i, segment) in segments.iter().enumerate() {
         let decimal_value = u8::from_str_radix(segment, 2).unwrap();
         let hex_val = format!("{:02X}", decimal_value);
         result.push_str(&*hex_val);
@@ -407,7 +407,6 @@ pub fn convert_ip_binary_to_ipv6(binary_ip: String) -> String {
     }
     result.to_lowercase()
 }
-
 
 fn hex_char_to_binary(hex_char: char) -> &'static str {
     match hex_char {
